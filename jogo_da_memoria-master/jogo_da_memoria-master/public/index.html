@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da Memoria</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/3132/3132772.svg" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/card.css" />
+  <link rel="stylesheet" href="styles/win.css" />
+  <!--Estilo da tela de vitória-->
+  <link rel="stylesheet" href="styles/responsive.css" />
+</head>
+
+<body>
+  <header>
+    <h1>JOGO DA MEMÓRIA RHINO</h1>
+    <nav>
+      <!--<a href="/">DECKS</a>
+        <a href="/">SOBRE</a>-->
+    </nav>
+  </header>
+  <!--ALTERAÇÃO* Essa div vai ser exibida quando o jogador vencer a partida!-->
+  <div id="vitoria">
+    <div id="container">
+      <h1>Parabéns!</h1>
+      <p>Você encontrou todos os pares com</p>
+      <h2><span id="movimentosvitoria">0</span> ERROS</h2>
+      <a href="index.html">Jogar denovo</a>
+    </div>
+  </div>
+  <!--FIM-ALTERAÇÃO*-->
+  <section id="responsivo">
+    <h2>Tentativas <span id="movimentos2">0</span></h2>
+    <!-- <button id="btn-mudartema">Mudar tema</button>
+          <button id="btn-reiniciar">Reiniciar</button> -->
+    <a href="index.html">Reiniciar</a>
+    <a id="counter">00:00:00</a>
+    <div class="max-width">
+      <!--<button onclick="start();" class="bg-green">Iniciar</button>-->
+      <!--<button onclick="stop();" class="bg-red">Reiniciar</button>-->
+    </div>
+    <script src="cron.js"></script>
+    <a>
+      <div class="collapsible-body">
+        <ul>
+          <!--<li>
+            <div class="input-field col s6">
+              <input id="card_number" type="text" class="validate" min="10" max="64" value="10">
+              <label for="card_number" class="blue-text darken-3">Número de Cartas</label>
+            </div>
+          </li>-->
+          <li>
+            <p class="blue-text darken-3">Dificuldade</p>
+          <li>
+            <label>
+              <input name="difficulty" type="radio" value="easy" checked />
+              <span>Fácil</span>
+            </label>
+            <label>
+              <input name="difficulty" type="radio" value="medi" />
+              <span>Médio</span>
+            </label>
+            <label>
+              <input name="difficulty" type="radio" value="hard" />
+              <span>Difícil</span>
+            </label>
+          </li>
+          </li>
+          <!-- <li><a href="#!">Size</a></li> -->
+        </ul>
+        <div class="center">
+          <button class="waves-effect waves-light btn blue darken-3" onclick="startGame()">JOGAR</button>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <div class="corpo">
+    <section id="esq">
+      <h2>Tentativas <span id="movimentos">0</span></h2>
+      <!-- <button id="btn-mudartema">Mudar tema</button>
+            <button id="btn-reiniciar">Reiniciar</button> -->
+      <a href="index.html">Reiniciar</a>
+      <a id="counter">00:00:00</a>
+      <div class="max-width">
+        <!--<button onclick="start();" class="bg-green">Iniciar</button>-->
+        <!--<button onclick="stop();" class="bg-red">Reiniciar</button>-->
+      </div>
+      <script src="cron.js"></script>
+      <a>
+        <div class="collapsible-body">
+          <ul>
+            <!--<li>
+              <div class="input-field col s6">
+                <input id="card_number" type="text" class="validate" min="10" max="64" value="10">
+                <label for="card_number" class="blue-text darken-3">Número de Cartas</label>
+              </div>
+            </li>-->
+            <p class="blue-text darken-3">Dificuldade</p>
+            <label>
+              <input name="difficulty" type="radio" value="easy" checked />
+              <span>Fácil</span>
+            </label>
+            <label>
+              <input name="difficulty" type="radio" value="medi" />
+              <span>Médio</span>
+            </label>
+            <label>
+              <input name="difficulty" type="radio" value="hard" />
+              <span>Difícil</span>
+            </label>
+
+            <!-- <li><a href="#!">Size</a></li> -->
+          </ul>
+          <div class="center">
+            <button class="waves-effect waves-light btn blue darken-3" onclick="startGame()">JOGAR</button>
+          </div>
+        </div>
+      </a>
+    </section>
+    <section class="jogo">
+      <div class="card" data-nome="Rhino">
+        <img class="frente" src="../public/src/Rhino.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="Rhino">
+        <img class="frente" src="../public/src/Rhino.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="tina">
+        <img class="frente" src="../public/src/tina.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="tina">
+        <img class="frente" src="../public/src/tina.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="coelho">
+        <img class="frente" src="../public/src/coelho.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="coelho">
+        <img class="frente" src="../public/src/coelho.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="sapato">
+        <img class="frente" src="../public/src/sapato.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="sapato">
+        <img class="frente" src="../public/src/sapato.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="musica">
+        <img class="frente" src="../public/src/musica.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="musica">
+        <img class="frente" src="../public/src/musica.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="girafa">
+        <img class="frente" src="../public/src/girafa.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+      <div class="card" data-nome="girafa">
+        <img class="frente" src="../public/src/girafa.png" alt="card" />
+        <img class="verso" src="../public/src/logo.png" alt="card" />
+      </div>
+    </section>
+    <section id="dir"></section>
+  </div>
+  <footer>
+    <ul>
+      <li>
+        <h3>Produzido por Luiz e Paulo</h3>
+      </li>
+  </footer>
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>
