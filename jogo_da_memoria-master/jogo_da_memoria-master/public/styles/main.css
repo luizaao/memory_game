@@ -17,7 +17,7 @@ header {
 header nav a {
     width: 20px;
     height: 20px;
-    /* padding: 20px; */
+    /*padding: 20px;*/
     margin-right: 24px;
     font-family: 'Righteous', cursive;
     font-size: 24px;
@@ -76,6 +76,12 @@ footer ul a img:hover {
     background-color: teal;
 }
 
+p.blue-text darken-3 {
+    padding: auto;
+    color: #000000;
+
+}
+
 
 
 .corpo {
@@ -85,11 +91,12 @@ footer ul a img:hover {
 }
 
 #esq {
-    background-color: white;
+    background-color: rgb(216, 219, 50);
     justify-content: space-between;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px 20px;
 
 }
 
@@ -101,6 +108,8 @@ footer ul a img:hover {
     padding: 10px 20px;
 
 }
+
+
 
 #esq a {
 
