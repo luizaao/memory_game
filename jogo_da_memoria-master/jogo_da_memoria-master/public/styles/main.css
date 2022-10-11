@@ -76,12 +76,6 @@ footer ul a img:hover {
     background-color: teal;
 }
 
-p.blue-text darken-3 {
-    padding: auto;
-    color: #000000;
-
-}
-
 
 
 .corpo {
@@ -91,7 +85,7 @@ p.blue-text darken-3 {
 }
 
 #esq {
-    background-color: rgb(216, 219, 50);
+    background-color: rgb(226, 228, 96);
     justify-content: space-between;
     display: flex;
     flex-direction: column;
